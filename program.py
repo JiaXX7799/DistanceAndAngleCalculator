@@ -70,7 +70,6 @@ class GeometryCalculator(QWidget):
         self.setWindowTitle("Geometry Calculator")
         self.setGeometry(100, 100, 600, 600)
 
-        # UI组件初始化
         self.layout = QVBoxLayout()
         self.setLayout(self.layout)
 
@@ -89,7 +88,6 @@ class GeometryCalculator(QWidget):
         self.distance_group = QGroupBox("Distance Calculator")
         self.distance_layout = QGridLayout()
 
-        # X1和Y1的标签与输入框
         self.x1_label = QLabel("X1:")
         self.x1_input = QLineEdit(self)
         self.distance_layout.addWidget(self.x1_label, 0, 0)
@@ -100,7 +98,6 @@ class GeometryCalculator(QWidget):
         self.distance_layout.addWidget(self.y1_label, 1, 0)
         self.distance_layout.addWidget(self.y1_input, 1, 1)
 
-        # X2和Y2的标签与输入框
         self.x2_label = QLabel("X2:")
         self.x2_input = QLineEdit(self)
         self.distance_layout.addWidget(self.x2_label, 2, 0)
@@ -111,12 +108,10 @@ class GeometryCalculator(QWidget):
         self.distance_layout.addWidget(self.y2_label, 3, 0)
         self.distance_layout.addWidget(self.y2_input, 3, 1)
 
-        # 计算按钮
         self.calculate_distance_button = QPushButton("Calculate Distance", self)
         self.calculate_distance_button.clicked.connect(self.calculate_distance)
         self.distance_layout.addWidget(self.calculate_distance_button, 4, 0, 1, 2)
 
-        # 显示结果
         self.distance_result_label = QLabel("Result: ")
         self.distance_layout.addWidget(self.distance_result_label, 5, 0, 1, 2)
 
@@ -128,7 +123,6 @@ class GeometryCalculator(QWidget):
         self.angle_group = QGroupBox("Angle Calculator")
         self.angle_layout = QGridLayout()
 
-        # 坐标A X 和 Y
         self.angle_x_label = QLabel("X for A:")
         self.angle_x_input = QLineEdit(self)
         self.angle_layout.addWidget(self.angle_x_label, 0, 0)
@@ -139,7 +133,6 @@ class GeometryCalculator(QWidget):
         self.angle_layout.addWidget(self.angle_y_label, 1, 0)
         self.angle_layout.addWidget(self.angle_y_input, 1, 1)
 
-        # 坐标B X 和 Y
         self.base_x_label = QLabel("X for B:")
         self.base_x_input = QLineEdit(self)
         self.angle_layout.addWidget(self.base_x_label, 2, 0)
@@ -150,7 +143,6 @@ class GeometryCalculator(QWidget):
         self.angle_layout.addWidget(self.base_y_label, 3, 0)
         self.angle_layout.addWidget(self.base_y_input, 3, 1)
 
-        # 基准点坐标 X 和 Y
         self.base_point_x_label = QLabel("Base X:")
         self.base_point_x_input = QLineEdit(self)
         self.angle_layout.addWidget(self.base_point_x_label, 4, 0)
@@ -161,12 +153,10 @@ class GeometryCalculator(QWidget):
         self.angle_layout.addWidget(self.base_point_y_label, 5, 0)
         self.angle_layout.addWidget(self.base_point_y_input, 5, 1)
 
-        # 计算按钮
         self.calculate_angle_button = QPushButton("Calculate Angle", self)
         self.calculate_angle_button.clicked.connect(self.calculate_angle)
         self.angle_layout.addWidget(self.calculate_angle_button, 6, 0, 1, 2)
 
-        # 显示结果
         self.angle_result_label = QLabel("Result: ")
         self.angle_layout.addWidget(self.angle_result_label, 7, 0, 1, 2)
 
@@ -178,7 +168,6 @@ class GeometryCalculator(QWidget):
         self.chord_group = QGroupBox("Chord/Angle/Radius Calculator")
         self.chord_layout = QGridLayout()
 
-        # 弦长、角度、半径输入框
         self.chord_length_label = QLabel("Chord Length:")
         self.chord_length_input = QLineEdit(self)
         self.chord_layout.addWidget(self.chord_length_label, 0, 0)
@@ -194,12 +183,10 @@ class GeometryCalculator(QWidget):
         self.chord_layout.addWidget(self.radius_label, 2, 0)
         self.chord_layout.addWidget(self.radius_input, 2, 1)
 
-        # 计算按钮
         self.calculate_chord_button = QPushButton("Calculate Chord/Angle/Radius", self)
         self.calculate_chord_button.clicked.connect(self.calculate_chord)
         self.chord_layout.addWidget(self.calculate_chord_button, 3, 0, 1, 2)
 
-        # 显示结果
         self.chord_result_label = QLabel("Result: ")
         self.chord_layout.addWidget(self.chord_result_label, 4, 0, 1, 2)
 
@@ -267,7 +254,7 @@ class GeometryCalculator(QWidget):
         layout.addWidget(history_text)
 
         buttons = QDialogButtonBox(QDialogButtonBox.Close)
-        buttons.rejected.connect(history_dialog.close)  # 修复关闭按钮
+        buttons.rejected.connect(history_dialog.close)
         layout.addWidget(buttons)
 
         history_dialog.setLayout(layout)
